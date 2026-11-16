@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: fabrictrack
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:54321/auth/v1
+          jwk-set-uri: http://127.0.0.1:54321/auth/v1/.well-known/jwks.json
+
+server:
+  port: 8081
+
+fabrictrack:
+  supabase:
+    url: ${SUPABASE_URL:http://127.0.0.1:54321}
+    admin-key: ${SUPABASE_ADMIN_KEY:}
+
+  admin:
+    url: ${ADMIN_PORTAL_URL:http://127.0.0.1:5173}
+
+business:
+  enabled: ${BUSINESS_ENABLED:false}
+  db-url: ${BUSINESS_DB_URL:jdbc:postgresql://127.0.0.1:54322/postgres}
+  db-user: ${BUSINESS_DB_USER:postgres}
+  db-password: ${BUSINESS_DB_PASSWORD}
+  otp-pepper: ${BUSINESS_OTP_PEPPER}
+  sms-mode: ${BUSINESS_SMS_MODE:disabled}
