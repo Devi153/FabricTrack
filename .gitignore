@@ -1,0 +1,10 @@
+**/node_modules/
+**/target/
+**/dist/
+**/*.tsbuildinfo
+**/.env.local
+**/.env
+.idea/
+*.log
+.business-otp-pepper
+.business-auth-secret
